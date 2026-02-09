@@ -58,56 +58,31 @@ This project demonstrates a production-ready multi-region architecture on Google
 
 
 
-\## Architecture Diagram
-
+## Architecture Diagram
 ```
-
-&nbsp;                         INTERNET
-
-&nbsp;                              |
-
-&nbsp;                              |
-
-&nbsp;                   +----------v----------+
-
-&nbsp;                   |  Global HTTP(S) LB  |
-
-&nbsp;                   |  (Anycast IP)       |
-
-&nbsp;                   +----------+----------+
-
-&nbsp;                              |
-
-&nbsp;             +----------------+----------------+
-
-&nbsp;             |                                 |
-
-&nbsp;   +---------v---------+           +-----------v---------+
-
-&nbsp;   |   US-CENTRAL1     |           |    US-EAST1         |
-
-&nbsp;   |   (Primary)       |           |   (Secondary)       |
-
-&nbsp;   +-------------------+           +---------------------+
-
-&nbsp;             |                                 |
-
-&nbsp;   +---------v---------+           +-----------v---------+
-
-&nbsp;   | Regional Backend  |           | Regional Backend    |
-
-&nbsp;   | +---------------+ |           | +-----------------+ |
-
-&nbsp;   | | MIG (2-4 VMs) | |           | | MIG (2-4 VMs)   | |
-
-&nbsp;   | | Multi-Zone    | |           | | Multi-Zone      | |
-
-&nbsp;   | +---------------+ |           | +-----------------+ |
-
-&nbsp;   +-------------------+           +---------------------+
-
+                          INTERNET
+                               |
+                               |
+                    +----------v----------+
+                    |  Global HTTP(S) LB  |
+                    |  (Anycast IP)       |
+                    +----------+----------+
+                               |
+              +----------------+----------------+
+              |                                 |
+    +---------v---------+           +-----------v---------+
+    |   US-CENTRAL1     |           |    US-EAST1         |
+    |   (Primary)       |           |   (Secondary)       |
+    +-------------------+           +---------------------+
+              |                                 |
+    +---------v---------+           +-----------v---------+
+    | Regional Backend  |           | Regional Backend    |
+    | +---------------+ |           | +-----------------+ |
+    | | MIG (2-4 VMs) | |           | | MIG (2-4 VMs)   | |
+    | | Multi-Zone    | |           | | Multi-Zone      | |
+    | +---------------+ |           | +-----------------+ |
+    +-------------------+           +---------------------+
 ```
-
 
 
 ---
