@@ -1,0 +1,22 @@
+# GCP Credentials
+*.json
+!configs/*.json
+*.pem
+*.key
+
+# OS Files
+.DS_Store
+Thumbs.db
+*.swp
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporary
+tmp/
+temp/
+*.tmp
